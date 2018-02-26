@@ -1,0 +1,17 @@
+Package: KuangHuangyingTools
+Title: Huangying Kuang's First Package
+Version: 0.0.0.9000
+Authors@R: person("Huangying", "Kuang", email = "kuang048@umn.edu", role = c("aut", "cre"))
+Description: package for quiz3!
+Depends: R (>= 3.2.3),dplyr,
+    ggplot2
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: testthat,
+    knitr,
+    rmarkdown
+Imports: dplyr,
+    ggplot2
+VignetteBuilder: knitr
