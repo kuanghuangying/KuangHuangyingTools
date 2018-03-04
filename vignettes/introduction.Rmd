@@ -8,17 +8,70 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+## My functions
+
+```{r}
+library(ggplot2)
+example(func1)
+```
+
+```{r}
+example(func2)
+```
+
+```{r}
+example(func3)
+```
+
+```{r}
+example(func4)
+```
+
+```{r}
+example(func5)
+```
+
+```{r}
+example(func6)
+```
+
+```{r}
+example(plotMyData)
+```
+```{r}
+example(func7)
+```
+
+```{r}
+example(hw2_1)
+```
+
+```{r}
+example(q3)
+```
+
+```{r}
+example(q4)
+```
+
+```{r}
+example(myapply)
+```
 
 ## Figures
 
 Using ggplot in three ways 
 
 ```{r, fig.show='hold'}
-ggplot2::ggplot(KuangHuangyingTools::cleanData,ggplot2::aes(x = Petal.Length, y = Petal.Width
-                        )) + ggplot2::geom_line()
-ggplot2::ggplot(KuangHuangyingTools::cleanData,ggplot2::aes(x = Petal.Length, y = Petal.Width,
-                         color = Species)) + ggplot2::geom_point()
-ggplot2::ggplot(KuangHuangyingTools::cleanData,ggplot2::aes(x = Petal.Length, y = Petal.Width)) +
-  ggplot2::geom_point() + ggplot2::facet_wrap(~ Species)
+ggplot(KuangHuangyingTools::cleanData,aes(x = Petal.Length, y = Petal.Width
+                        )) + geom_line()
+ggplot(KuangHuangyingTools::cleanData,aes(x = Petal.Length, y = Petal.Width,
+                         color = Species)) + geom_point()
+ggplot(KuangHuangyingTools::cleanData,aes(x = Petal.Length, y = Petal.Width)) +
+  geom_point() + facet_wrap(~ Species)
 ```
 
+```{r,fig.show='hold'}
+ggplot(KuangHuangyingTools::d,aes(x = x, y = p)) +
+  geom_point() + theme(panel.background = element_rect(fill = 'yellow', colour = 'red'))
+```

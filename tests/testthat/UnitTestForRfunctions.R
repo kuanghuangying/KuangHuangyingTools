@@ -29,3 +29,65 @@ test_that("func4 computes the weighted mean, var, sd", {
   expect <- list(mean=mean(d),var=var(d),sd=sd(d))
   expect_identical(val,expect)
 })
+
+test_that("func5 computes the weighted mean, var, sd", {
+  val <- func5(d)
+  expect <- list(mean=mean(d),var=var(d),sd=sd(d))
+  expect_identical(val,expect)
+})
+
+expect_message(func6(NA), "not numeric")
+
+test_that("func6 catches error", {
+  expect_message(func6(NA), "not numeric")
+})
+
+
+test_that("hw2_1 calculates xTA−1x", {
+  A <- matrix( c(5, 1, 0,
+                 3,-1, 2,
+                 4, 0,-1), nrow=3, byrow=TRUE)
+  A_inv = matrix( c(0.0625, 0.0625, 0.125,
+                    0.6875,-0.3125, -0.625,
+                    0.2500, 0.250,-0.500), nrow=3, byrow=TRUE)
+  x = c(7,8,9)
+  x <- matrix(x,ncol=1)
+  val <-hw2_1(A,x)
+  expect = t(x)%*%A_inv%*%x
+  expect_identical(val,expect)
+})
+
+
+test_that("%question2%", {
+  A <- matrix( c(5, 1, 0,
+                 3,-1, 2,
+                 4, 0,-1), nrow=3, byrow=TRUE)
+  A_inv = matrix( c(0.0625, 0.0625, 0.125,
+                    0.6875,-0.3125, -0.625,
+                    0.2500, 0.250,-0.500), nrow=3, byrow=TRUE)
+  x = c(7,8,9)
+  x <- matrix(x,ncol=1)
+  val <-A %question2% x
+  expect = t(x)%*%A_inv%*%x
+  expect_identical(val,expect)
+})
+
+
+test_that("q3 computes standardized matrix", {
+  val <- q3(matrix(rnorm(20),nc=5,nr=4))
+  expect <- scale(matrix(rnorm(20),nc=5,nr=4))
+  expect_identical(val,expect)
+})
+
+test_that("q4 computes standardized matrix", {
+  val <- q4(matrix(rnorm(20),nc=5,nr=4))
+  expect <- scale(matrix(rnorm(20),nc=5,nr=4))
+  expect_identical(val,expect)
+})
+
+
+test_that("myapply works as apply", {
+  val <- myapply(matrix(1:6, nrow = 3, ncol = 2),1,mean)
+  expect <- apply(matrix(1:6, nrow = 3, ncol = 2),1,mean)
+  expect_identical(val,expect)
+})
