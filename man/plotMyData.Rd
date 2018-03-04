@@ -2,10 +2,10 @@
 % Please edit documentation in R/plotMyData.R
 \name{plotMyData}
 \alias{plotMyData}
-\title{Plot my data}
+\title{Plot my data as scatterplot}
 \usage{
 plotMyData()
 }
 \description{
-Plot my data
+Plot my data as scatterplot
 }
